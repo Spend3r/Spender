@@ -14,12 +14,11 @@ log = logging.getLogger(__name__)
 def create_app(config=None):
     app = Flask(__name__)
     _register_core_blueprints(app)
-    print(app.url_map)
     return app
 
 
 def _register_core_blueprints(app):
-    u'''Register all blueprints defined in the `blueprints` folder
+    '''Register all blueprints defined in the `blueprints` folder
     '''
     def is_blueprint(mm):
         return isinstance(mm, Blueprint)
@@ -30,4 +29,4 @@ def _register_core_blueprints(app):
         module = loader.find_module(name).load_module(name)
         for blueprint in inspect.getmembers(module, is_blueprint):
             app.register_blueprint(blueprint[1])
-            log.debug(u'Registered core blueprint: {0!r}'.format(blueprint[0]))
+            log.info('Registered blueprint: {0!r}'.format(blueprint[0]))

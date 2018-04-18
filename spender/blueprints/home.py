@@ -1,10 +1,13 @@
-from flask import Blueprint
+# encoding: utf-8
 
+import logging
+from flask import Blueprint, render_template
 
-home = Blueprint('home', __name__)
+log = logging
+home = Blueprint('home', __name__, url_prefix='/', template_folder='templates')
 
 
 def index():
-    return 'Hello World'
+    return render_template('home/index.html')
 
-home.add_url_rule('/home', view_func=index)
+home.add_url_rule('/', '/home', view_func=index)
