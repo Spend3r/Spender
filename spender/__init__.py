@@ -6,14 +6,21 @@ import os
 import pkgutil
 
 from flask import Flask, Blueprint
+from flask_sqlalchemy import SQLAlchemy
 
+
+from config import config
+from database import init_db
 
 log = logging.getLogger(__name__)
 
 
-def create_app(config=None):
+def create_app(config=config.get('development')):
     app = Flask(__name__)
+
+    init_db()
     _register_core_blueprints(app)
+
     return app
 
 
