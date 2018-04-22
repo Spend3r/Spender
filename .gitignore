@@ -25,6 +25,7 @@ pip-log.txt
 
 #Mr Developer
 __pycache__/*
+.pytest_cache
 venv
 *.pyc
 build
