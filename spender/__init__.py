@@ -24,6 +24,11 @@ def create_app(config=config.get('development')):
     return app
 
 
+def url_for_static(filename):
+    root = app.config.get('STATIC_ROOT', '')
+    return join(root, filename)
+
+
 def _register_core_blueprints(app):
     '''Register all blueprints defined in the `blueprints` folder
     '''

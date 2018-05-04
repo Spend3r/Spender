@@ -6,11 +6,14 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!-- Style -->
-    <link href="/static/style.css" rel="stylesheet"></link>
+    <link href="/static/css/style.css" rel="stylesheet"></link>
     <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     <!-- Javascript Imports -->
-      <!-- FAVICON -->
+    <!-- FAVICON -->
     <link rel='shortcut icon' href='/static/favicon.ico' type='image/x-icon'/ >
+
+    <link href="{{ url_for('static', filename='css/fullcalendar/fullcalendar.min.css') }}" rel='stylesheet' />
+    <link href="{{ url_for('static', filename='css/fullcalendar/fullcalendar.print.css') }}" rel='stylesheet' media='print' />
 
 
     {% block headerstuff %}
@@ -24,7 +27,12 @@
 
 {% endblock %}
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<script src="{{ url_for('static', filename='css/lib/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='css/lib/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fullcalendar/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fullcalendar/my_calendar.js') }}"></script>
 </html>

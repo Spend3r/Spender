@@ -21,4 +21,6 @@ def init_db():
     # you will have to import them first before calling init_db()
     # import yourapplication.models
     from spender.models.user import User
+    from spender.models.budget import Budget
+    from spender.models.category import Category
     Base.metadata.create_all(bind=engine)
