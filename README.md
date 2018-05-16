@@ -17,5 +17,3 @@
 
 ***
 
-###### Inspired by [Spent](https://github.com/emilydowgialo/Spent)
-
