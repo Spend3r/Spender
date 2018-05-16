@@ -16,7 +16,7 @@ class Budget(Base):
     user = relationship("User", backref=backref('budget'))
 
     def __repr__(self):
-        """ Provide useful info """
+        """ Object Representation"""
 
         return "<Budget id=%s budget=%s budget_userid=%s\
                 category=%s budget_start_date=%s budget_end_date=%s>" % (
