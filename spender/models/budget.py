@@ -1,19 +1,17 @@
 # encoding: utf-8
-from sqlalchemy import Column, Integer, String, Numeric, ForeignKey, DateTime
-from database import Base
-from sqlalchemy.orm import relationship, backref
+from app import db
 
 
-class Budget(Base):
+class Budget(db.Model):
     """ This is the user's budget """
 
     __tablename__ = "budget"
 
-    id = Column(Integer, autoincrement=True, primary_key=True)
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     # the data type of the budget should match the data type of the price
-    budget = Column(Numeric(15, 2))
-    budget_userid = Column(Integer, ForeignKey('users.id'))
-    user = relationship("User", backref=backref('budget'))
+    budget = db.Column(db.Numeric(15, 2))
+    budget_userid = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship("User", backref=backref('budget'))
 
     def __repr__(self):
         """ Object Representation"""

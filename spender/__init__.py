@@ -6,19 +6,21 @@ import os
 import pkgutil
 
 from flask import Flask, Blueprint
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
 
 from config import config
-from database import init_db
 
 log = logging.getLogger(__name__)
 
 
 def create_app(config=config.get('development')):
     app = Flask(__name__)
-
-    init_db()
+    app.config.from_object(config)
+    db = SQLAlchemy()
+    db.init_app(app)
+    Migrate(app, db)
     _register_core_blueprints(app)
 
     return app

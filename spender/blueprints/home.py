@@ -3,8 +3,8 @@
 import logging
 from flask import Blueprint, render_template
 
-log = logging
-home = Blueprint('home', __name__, url_prefix='/', template_folder='templates')
+log = logging.getLogger(__name__)
+home = Blueprint('home', __name__, url_prefix='/')
 
 
 def index():

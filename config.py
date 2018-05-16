@@ -15,6 +15,7 @@ class Config(object):
 class DevelopmentConfig(Config):
 
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'spender.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEVELOPMENT = True
     DEBUG = True
     TESTING = True
