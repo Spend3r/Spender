@@ -15,6 +15,7 @@ def add_user():
         flash('Name is requested for the user {}'.format(form.name))
         user = User(form.name, form.email)
         return redirect('/')
+
     return render_template('user/add_user.html', form=form)
 
 
