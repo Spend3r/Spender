@@ -23,8 +23,10 @@ def create_app(config=config.get('development')):
     app.config.from_object(config)
 
     db.init_app(app)
-    migrate.init_app(app, db)
+    # migrate.init_app(app, db)
     _register_core_blueprints(app)
+
+    init_db(app, db)
 
     return app
 
@@ -47,3 +49,11 @@ def _register_core_blueprints(app):
         for blueprint in inspect.getmembers(module, is_blueprint):
             app.register_blueprint(blueprint[1])
             log.info('Registered blueprint: {0!r}'.format(blueprint[0]))
+
+
+def init_db(app, db):
+    from spender.models import user
+    from spender.models import budget
+    with app.app_context():
+        db.create_all()
+        db.session.commit()
