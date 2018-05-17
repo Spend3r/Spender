@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from spender.spender.models import user
+from spender.models import user
 
 
 def test_create_user(session):

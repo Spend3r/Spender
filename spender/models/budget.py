@@ -1,5 +1,5 @@
 # encoding: utf-8
-from app import db
+from spender import db
 
 
 class Budget(db.Model):
