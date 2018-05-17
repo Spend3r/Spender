@@ -14,13 +14,16 @@ from config import config
 
 log = logging.getLogger(__name__)
 
+db = SQLAlchemy()
+migrate = Migrate()
+
 
 def create_app(config=config.get('development')):
     app = Flask(__name__)
     app.config.from_object(config)
-    db = SQLAlchemy()
+
     db.init_app(app)
-    Migrate(app, db)
+    migrate.init_app(app, db)
     _register_core_blueprints(app)
 
     return app

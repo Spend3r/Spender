@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from spender.models import user
+import pytest_flask
 
 
 def test_create_user(session):
