@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Add User:</h1>
+
+<form action="" method="POST">
+        <div class="form-group">
+{{ form.hidden_tag()}}
+<p>
+    {{form.name.label}}<br/>
+    {{form.name}}<br />
+    {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+<p>
+{{form.email.label}}<br />
+{{form.email}}<br />
+
+</p>
+<p>{{ form.submit() }}</p>
+        </div>
+</form>
+
+
+{% endblock%}

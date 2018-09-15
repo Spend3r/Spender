@@ -11,7 +11,7 @@ class Budget(db.Model):
     # the data type of the budget should match the data type of the price
     budget = db.Column(db.Numeric(15, 2))
     budget_userid = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship("User", backref=backref('budget'))
+    user = db.relationship("User", backref='budget')
 
     def __repr__(self):
         """ Object Representation"""
